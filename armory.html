@@ -1,4 +1,5 @@
-
+<html lang="en">
+<head>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -6,9 +7,9 @@
   <title>Diablo 2 - Resurgence (unofficial 1.13 mod) - Armory</title>
   <meta name="description" content="Diablo 2 Resurgence mod - Item Armory">
   <meta name="author" content="freeb0rn">
-  <meta http-equiv="cache-control" content="no-cache"> 
-<meta http-equiv="expires" content="0"> 
-<meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv='cache-control' content='no-cache'> 
+<meta http-equiv='expires' content='0'> 
+<meta http-equiv='pragma' content='no-cache'>
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -16,7 +17,7 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -573,7 +574,7 @@ document.addEventListener('keydown', function(event) {
         
         $("#armoryContent").empty();
 
-        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"images/chaos-barbhireable.gif\" /></div>";
+        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"/images/chaos-barbhireable.gif\" /></div>";
         $("#armoryContent").html(loading_html);
 
         var html = "";
@@ -614,7 +615,7 @@ document.addEventListener('keydown', function(event) {
                     html = html + "<hr>";
                     html = html + "<div class=\"set-item row\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
                     html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
                     html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
                     html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + setItem.code + "', event)\">" + setItem.code + "</span>";
@@ -645,7 +646,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -671,7 +672,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -711,7 +712,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   if (jsonItem.runes && jsonItem.runes.length > 0) {
                   html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Runes: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
@@ -760,7 +761,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Charm slot: "+ jsonItem.slot + "</span>";
                   html = html + "<span> Charm code: "+ jsonItem.index + "</span>";
@@ -815,47 +816,87 @@ document.addEventListener('keydown', function(event) {
                   // Sort by index or other criteria
                   data.sort(firstBy("index"));
 
+                  // Group items by subclass name
+                  var subclasses = {};
                   $.each(data, function (key, jsonItem) {
-                      // Start the item row
-                      html = html + "<div class=\"item row\">";
+                      var subclassName = jsonItem.name;
+                      if (!subclasses[subclassName]) {
+                          subclasses[subclassName] = [];
+                      }
+                      subclasses[subclassName].push(jsonItem);
+                  });
 
-                      // Left column (image + name)
-                      html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
-                      html = html + "<span class=\"item-name diablo_unique\">" + jsonItem.name + "</span>";
+                  // Sort subclasses alphabetically
+                  var subclassNames = Object.keys(subclasses).sort();
 
-                      // Assuming every item has augments
-                      html += "<div style=\"text-align: center; display: block;\">";
+                  $.each(subclassNames, function (key, subclassName) {
+                      var items = subclasses[subclassName];
                       
-                      // Augments header
-                      html += "<span class=\"diablo_white\" style=\"display: block;\">Augments:</span>";
-
-                      // Iterate through the augments array
-                      $.each(jsonItem.Augments, function (augmentKey, augmentObj) {
-                          // Check if augmentObj has name and runes
-                          if (augmentObj.name && augmentObj.runes) {
-                              // Display augment name in diablo_unique
-                              html += "<span class=\"diablo_unique\" style=\"display: block;\">";
-                              html += augmentObj.name + ": ";
-                              html += "</span>";  // Close augment name span
-
-                              // Display runes in diablo_white
-                              html += "<span class=\"diablo_white\" style=\"display: block;\">";
-                              html += augmentObj.runes.join(", ");
-                              html += "</span>";  // Close runes span
-                          }
+                      // Sort items by tier
+                      items.sort(function(a, b) {
+                          return parseInt(a.tier) - parseInt(b.tier);
                       });
 
-                      html += "</div>";  // Close augments div
+                      // Get the first item (tier 1) to display as the main item
+                      var mainItem = items[0];
 
-                      html += "</div>";  // Close item-left (image and name) div
+                      html = html + "<div class=\"item row\" style=\"margin-bottom: 30px; border: 2px solid #666; padding: 20px; border-radius: 8px;\">";
+                      
+                                             // Header with subclass name
+                       html = html + "<div class=\"row\" style=\"margin-bottom: 20px;\">";
+                       html = html + "<h3 class=\"diablo_unique\" style=\"text-align: center; width: 100%; margin: 0;\">" + subclassName + "</h3>";
+                       html = html + "</div>";
 
-                      // Right column (properties)
-                      html += "<div class=\"item-right eight columns\">";
-                      html = printItem(html, jsonItem);
-                      html += "</div>";  // Close item-right div
+                                               // Augments + runes section (if they exist)
+                        if (mainItem.Augments && mainItem.Augments.length > 0) {
+                            html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
+                            html = html + "<div class=\"twelve columns\">";
+                            html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; display: block; margin-bottom: 10px;\">Augments:</span>";
+                            
+                            // Iterate through the augments array
+                            $.each(mainItem.Augments, function (augmentKey, augmentObj) {
+                                // Display augment name in diablo_unique
+                                html += "<span class=\"diablo_unique\" style=\"display: block; margin-bottom: 5px;\">";
+                                html += augmentObj.name + ":";
+                                html += "</span>";  // Close augment name span
+                                
+                                // Display runes in diablo_white
+                                html += "<span class=\"diablo_white\" style=\"display: block; margin-bottom: 15px;\">";
+                                html += augmentObj.runes.join(", ");
+                                html += "</span>";  // Close runes span
+                            });
+                            
+                            html = html + "</div>";
+                            html = html + "</div>";
+                        }
 
-                      // Close the entire item row
+                       // Tier numbers row
+                       html = html + "<div class=\"row\" style=\"margin-bottom: 20px; text-align: center;\">";
+                       html = html + "<div class=\"twelve columns\">";
+                       html = html + "<span class=\"diablo_white\" style=\"font-weight: bold; margin-right: 10px;\">Tiers:</span>";
+                       html += "<div class=\"tier-buttons-container\" style=\"display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-top: 10px;\">";
+                       
+                                              $.each(items, function (key, item) {
+                            var tierClass = item.tier === "1" ? "diablo_unique" : "diablo_white";
+                            html = html + "<a onclick=\"loadNVTier('" + item.index + "', '" + item.name + "', '" + subclassName + "'); return false;\" class=\"" + tierClass + "\" style=\"margin: 0; padding: 5px 10px; border: 1px solid #666; border-radius: 4px; text-decoration: none; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 30px; line-height: 1; font-size: 14px; font-weight: bold; text-align: center; vertical-align: middle;\">" + item.tier + "</a>";
+                        });
+                       
+                       html += "</div>";
+                       html = html + "</div>";
+                       html = html + "</div>";
+
+                       // Stats section - centered single column
+                       html = html + "<div class=\"row\" id=\"nv-display-" + subclassName.replace(/\s+/g, '-') + "\" style=\"text-align: center;\">";
+                       
+                       // Single centered column for image and properties
+                       html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
+                       html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
+                       html += "<br /><br />";  // Add some spacing between image and properties
+                       html = printItem(html, mainItem);
+                       
+                       html += "</div>";  // Close single column div
+
+                       html += "</div>";  // Close stats section
                       html += "</div>";  // Close item row div
                   });
 
@@ -1037,42 +1078,28 @@ If (alvl > 99) then alvl=99<br />`;
                       case "armor":
                         switch (filters) { // todo: change this when filters can later be stacked
                           case "Shield":
-                            return $.inArray("Any Shield", element.subCategories) !== -1;
-                            break;
+                            filters = "Any Shield"; // so both xbow quivers and normal quivers are grabbed
                           
                           default:
-                            // Check both category and subCategories for armor items
-                            return (element.category && element.category.indexOf(filters) !== -1) || 
-                                   $.inArray(filters, element.subCategories) !== -1 ||
-                                   $.inArray(filters + "s", element.subCategories) !== -1; // Try plural version
-                            break;
+                            filters = filters;
+                          break;
                         }
                       case "weapon":
                         // special cases
-                        var weaponFilter = filters;
                         switch (filters) { // todo: change this when filters can later be stacked
                           case "Quiver":
-                            weaponFilter = "Missile"; // so both xbow quivers and normal quivers are grabbed
-                            break;
+                            filters = "Missile"; // so both xbow quivers and normal quivers are grabbed
                           
                           default:
-                            weaponFilter = filters;
-                            break;
+                            filters = filters;
+                          break;
                         }
-                        // Check subCategories for weapon match
-                        return $.inArray(weaponFilter, element.subCategories) !== -1 ||
-                               $.inArray(weaponFilter + "s", element.subCategories) !== -1 || // Try plural version
-                               (element.category && element.category.indexOf(weaponFilter) !== -1); // Check category too
+
+                        return $.inArray(filters, element.subCategories) !== -1;
                         break;
                       
                       case "jewelry":
                         return element.category == filters;
-                        break;
-
-                      case "circlet":
-                        // Check category for circlet types
-                        return (element.category && element.category.indexOf(filters) !== -1) ||
-                               $.inArray(filters, element.subCategories) !== -1;
                         break;
 
                       case "other":
@@ -1085,10 +1112,6 @@ If (alvl > 99) then alvl=99<br />`;
                             return element.category == filters;
                             break;
                         }                    
-                        break;
-
-                      case "class":
-                        return element.class == filters;
                         break;
 
                       default:
@@ -1106,7 +1129,7 @@ If (alvl > 99) then alvl=99<br />`;
                         .thenBy(function (v1, v2) { return itemTypes.indexOf(v1.itemType) - itemTypes.indexOf(v2.itemType) })
                         .thenBy(function (v1, v2) { return itemTiers.indexOf(v1.tier) - itemTiers.indexOf(v2.tier) })
                         .thenBy("ilvl")
-                        .thenBy("name");
+                        .thenBy("Name");
                 data.sort(s);
                 // var s = firstBy(function (v1) { return v1.index.substring(0, v1.index.length-4) })
                 //     .thenBy("lvlreq")
@@ -1117,7 +1140,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                   
                   html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                   html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code + " ILVL>1]: %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
@@ -1262,7 +1285,7 @@ If (alvl > 99) then alvl=99<br />`;
                     
                     
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1311,7 +1334,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1337,7 +1360,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                       html = html + "<div class=\"row\" id=\"" + subItem1[0].index + "\" style=\"display: none;\">";
                       html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + subItem1[0].imageFile + "\"></span>";
+                      html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem1[0].imageFile + "\"></span>";
                       if (subItem1[0].version == "108") {
                         html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + " (1.08 relic)</span>";
                       }
@@ -1363,7 +1386,7 @@ If (alvl > 99) then alvl=99<br />`;
                         // print the left side of the item info
                         html = html + "<div class=\"row\" id=\"" + subItem2[0].index + "\" style=\"display: none;\">";
                         html = html + "<div class=\"item-left four columns\">";
-                        html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + subItem2[0].imageFile + "\"></span>";
+                        html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem2[0].imageFile + "\"></span>";
                         if (subItem2[0].version == "108") {
                           html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + " (1.08 relic)</span>";
                       }
@@ -1400,106 +1423,106 @@ If (alvl > 99) then alvl=99<br />`;
       });
     }
 
-    function printItem(html, jsonItem) {
-            // base properties
-            $.each(jsonItem.baseProps, function (key, value) {
-              html = html + "<span class=\"item-property\">";
-              $.each(value, function (key, value) {
-                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
-                {
-                  switch(value)
-                  {
-                    case "white":
-                      html = html + "<span class=\"no-wrap diablo_white\">";
-                      break;
+         function printItem(html, jsonItem) {
+             // base properties
+             $.each(jsonItem.baseProps, function (key, value) {
+               html = html + "<span class=\"item-property\" style=\"display: block; margin-bottom: 5px;\">";
+               $.each(value, function (key, value) {
+                 if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
+                 {
+                   switch(value)
+                   {
+                     case "white":
+                       html = html + "<span class=\"no-wrap diablo_white\">";
+                       break;
 
-                    case "blue":
-                      html = html + "<span class=\"no-wrap diablo_blue\">";
-                      break;
+                     case "blue":
+                       html = html + "<span class=\"no-wrap diablo_blue\">";
+                       break;
 
-                    case "red":
-                      html = html + "<span class=\"no-wrap diablo_red\">";
-                      break;
+                     case "red":
+                       html = html + "<span class=\"no-wrap diablo_red\">";
+                       break;
 
-                    case "amber":
-                      html = html + "<span class=\"no-wrap diablo_amber\">";
-                      break;
-                      
-                    case "yellow":
-                      html = html + "<span class=\"no-wrap diablo_yellow\">";
-                      break;
-                      
-                    case "green":
-                      html = html + "<span class=\"no-wrap diablo_green\">";
-                      break;
+                     case "amber":
+                       html = html + "<span class=\"no-wrap diablo_amber\">";
+                       break;
+                       
+                     case "yellow":
+                       html = html + "<span class=\"no-wrap diablo_yellow\">";
+                       break;
+                       
+                     case "green":
+                       html = html + "<span class=\"no-wrap diablo_green\">";
+                       break;
 
-                    case "orange":
-                    html = html + "<span class=\"no-wrap orange\">";
-                    break;
+                     case "orange":
+                     html = html + "<span class=\"no-wrap orange\">";
+                     break;
 
-                    case "gray":
-                      html = html + "<span class=\"no-wrap gray\">";
-                      break;    
-                    
-                  }
-                }
-                else /* index is odd ==> asdlogic dictatates this is a property */ 
-                {
-                  html = html + value + "</span>";
-                }
-              });
-              html = html + "</span>";
-            });
+                     case "gray":
+                       html = html + "<span class=\"no-wrap gray\">";
+                       break;    
+                     
+                   }
+                 }
+                 else /* index is odd ==> asdlogic dictatates this is a property */ 
+                 {
+                   html = html + value + "</span>";
+                 }
+               });
+               html = html + "</span>";
+             });
 
-            // extra properties
-            $.each(jsonItem.props, function (key, value) {
-              html = html + "<span class=\"item-property\">";
-              $.each(value, function (key, value) {
-                if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
-                {
-                  switch(value)
-                  {
-                    case "white":
-                      html = html + "<span class=\"no-wrap diablo_white\">";
-                      break;
+                         // extra properties
+             $.each(jsonItem.props, function (key, value) {
+               html = html + "<span class=\"item-property\" style=\"display: block; margin-bottom: 5px;\">";
+               $.each(value, function (key, value) {
+                 if (key % 2 === 0) /* index is even ==> asdlogic dictatates this is a color */ 
+                 {
+                   switch(value)
+                   {
+                     case "white":
+                       html = html + "<span class=\"no-wrap diablo_white\">";
+                       break;
 
-                    case "blue":
-                      html = html + "<span class=\"no-wrap diablo_blue\">";
-                      break;
+                     case "blue":
+                       html = html + "<span class=\"no-wrap diablo_blue\">";
+                       break;
 
-                    case "red":
-                      html = html + "<span class=\"no-wrap diablo_red\">";
-                      break;
+                     case "red":
+                       html = html + "<span class=\"no-wrap diablo_red\">";
+                       break;
 
-                    case "amber":
-                      html = html + "<span class=\"no-wrap diablo_amber\">";
-                      break;                    
-                      
-                    case "green":
-                      html = html + "<span class=\"no-wrap diablo_green\">";
-                      break;
+                     case "amber":
+                       html = html + "<span class=\"no-wrap diablo_amber\">";
+                       break;                    
+                       
+                     case "green":
+                       html = html + "<span class=\"no-wrap diablo_green\">";
+                       break;
 
-                    case "orange":
-                    html = html + "<span class=\"no-wrap orange\">";
-                    break;
+                     case "orange":
+                     html = html + "<span class=\"no-wrap orange\">";
+                     break;
 
-                    case "yellow":
-                      html = html + "<span class=\"no-wrap diablo_yellow\">";
-                      break;
+                     case "yellow":
+                       html = html + "<span class=\"no-wrap diablo_yellow\">";
+                       break;
 
-                    case "gray":
-                      html = html + "<span class=\"no-wrap gray\">";
-                      break;    
-                    
-                  }
-                }
-                else /* index is odd ==> asdlogic dictatates this is a property */ 
-                {
-                  html = html + value + "</span>";
-                }
-              });
-              html = html + "</span>";  
-            });
+                     case "gray":
+                       html = html + "<span class=\"no-wrap gray\">";
+                       break;    
+                     
+                   }
+                 }
+                 else /* index is odd ==> asdlogic dictatates this is a property */ 
+                 {
+                   html = html + value + "</span>";
+                 }
+               });
+               html = html + "</span>";  
+             });
 
             // extra properties ** RUNEWORD ONLY
             if (typeof jsonItem.weaponProps !== "undefined" && jsonItem.weaponProps.length > 0) {
@@ -1533,6 +1556,40 @@ If (alvl > 99) then alvl=99<br />`;
 
       return html;
     }
+
+                   function loadNVTier(itemIndex, itemName, subclassName) {
+          // Load the specific tier item data
+          $.getJSON("js/nv.json", function (data) {
+              var item = $.grep(data, function(e){ return e.index == itemIndex; })[0];
+              if (item) {
+                  var html = "";
+                  
+                  // Single centered column for image and properties
+                  html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
+                  html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
+                  html += "<br />";  // Add some spacing between image and properties
+                  html = printItem(html, item);
+                  
+                  html += "</div>";  // Close single column div
+
+                 // Update only the specific subclass display area
+                 var displayId = "nv-display-" + subclassName.replace(/\s+/g, '-');
+                 $("#" + displayId).html(html);
+                 
+                                   // Update tier button colors to show which one is selected
+                  var tierButtons = $("a[onclick*='loadNVTier'][onclick*='" + subclassName + "']");
+                  tierButtons.removeClass("diablo_unique").addClass("diablo_white");
+                  
+                  // Find the clicked tier button and highlight it - use exact match to avoid substring issues
+                  var clickedTierButton = $("a[onclick*='loadNVTier'][onclick*='" + itemIndex + "'][onclick*='" + subclassName + "']").filter(function() {
+                      // Additional filter to ensure exact match of itemIndex
+                      var onclick = $(this).attr('onclick');
+                      return onclick.indexOf("'" + itemIndex + "'") !== -1;
+                  });
+                  clickedTierButton.removeClass("diablo_white").addClass("diablo_unique");
+             }
+         });
+     }
   </script>
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -1541,10 +1598,11 @@ If (alvl > 99) then alvl=99<br />`;
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/icon32-32.png">
+  <link rel="icon" type="image/png" href="/images/icon32-32.png">
 
 </head>
 <body>
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
@@ -1584,25 +1642,25 @@ If (alvl > 99) then alvl=99<br />`;
     </div>       
 
 
-    <div class="row separator"></div>
+    <div class="row separator" ></div>
 
 
     <div class="row" style="text-align: center; font-size:1rem;">
         <div>
           <a id="test"></a>
           <p>
-            Diablo 2 Resurgence is an unofficial modification for Diablo 2: Lord of Destruction with absolutely no commercial elements.<br/> 
+            Diablo 2 Resurgence is an unofficial modification for Diablo 2: Lord of Destruction with absolutely no commercial elements.<br /> 
           All trademarks referenced herein are the properties of their respective owners.
           <p>
-            Battle.net®<br/>
+            Battle.net®<br />
             ©1996 - 2014 Blizzard Entertainment, Inc. All rights reserved. Battle.net and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
           </p>
           <p>
-            Diablo® II<br/>
+            Diablo® II<br />
             ©2000 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
           </p>
           <p>
-            Diablo® II: Lord of Destruction®<br/>
+            Diablo® II: Lord of Destruction®<br />
             ©2001 Blizzard Entertainment, Inc. All rights reserved. Diablo, Lord of Destruction and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
           </p>
         </div>
