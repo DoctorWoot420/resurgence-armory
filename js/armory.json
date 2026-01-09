@@ -1,166 +1,12 @@
+
 {
 "itemCats": [
     {
     "itemCatID":"baseItems",
-    "itemCatName":"Base Items",
-    "itemCatSubItems": 
-        [ 
-            {
-            "tier": 
-            [
-                {
-                "itemCatID":"norm",
-                "itemCatName":"Normal"
-                },
-                {
-                "itemCatID":"excep",
-                "itemCatName":"Exceptional"
-                },
-                {
-                "itemCatID":"elit",
-                "itemCatName":"Elite"
-                }
-            ],
-            "weapon": 
-            [
-                {
-                "itemCatID":"axe",
-                "itemCatName":"Axe",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"bow",
-                "itemCatName":"Bow",
-                "itemCatMeleeRanged":"ranged"
-                },
-                {
-                "itemCatID":"xbow",
-                "itemCatName":"Crossbow",
-                "itemCatMeleeRanged":"ranged"
-                },
-                {
-                "itemCatID":"quiver",
-                "itemCatName":"Quiver",
-                "itemCatMeleeRanged":"ranged"
-                },
-                {
-                "itemCatID":"dagg",
-                "itemCatName":"Knife",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"jav",
-                "itemCatName":"Javelin",
-                "itemCatMeleeRanged":"ranged"
-                },
-                {
-                "itemCatID":"mace",
-                "itemCatName":"Mace",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"hammer",
-                "itemCatName":"Hammer",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"parm",
-                "itemCatName":"Polearm",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"scep",
-                "itemCatName":"Scepter",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"spea",
-                "itemCatName":"Spear",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"staff",
-                "itemCatName":"Staff",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"swrd",
-                "itemCatName":"Sword",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"throw",
-                "itemCatName":"Thrown Weapon",
-                "itemCatMeleeRanged":"ranged"
-                },
-                {
-                "itemCatID":"wand",
-                "itemCatName":"Wand",
-                "itemCatMeleeRanged":"melee"
-                },
-                {
-                "itemCatID":"h2h",
-                "itemCatName":"Hand to Hand",
-                "itemCatMeleeRanged":"melee"
-                }
-            ],
-            "armor": 
-            [
-                {
-                "itemCatID":"helm",
-                "itemCatName":"Helm"
-                },
-                {
-                "itemCatID":"chestArmor",
-                "itemCatName":"Armor"
-                },
-                {
-                "itemCatID":"shield",
-                "itemCatName":"Shield"
-                },
-                {
-                "itemCatID":"gloves",
-                "itemCatName":"Gloves"
-                },
-                {
-                "itemCatID":"boots",
-                "itemCatName":"Boots"
-                },
-                {
-                "itemCatID":"belt",
-                "itemCatName":"Belt"
-                }                                                                                
-            ],
-            "circlet": 
-            [
-                {
-                "itemCatID":"circlet",
-                "itemCatName":"Circlet"
-                },
-                {
-                "itemCatID":"coronet",
-                "itemCatName":"Coronet"
-                },
-                {
-                "itemCatID":"tiara",
-                "itemCatName":"Tiara"
-                },
-                {
-                "itemCatID":"diadem",
-                "itemCatName":"Diadem"
-                }                                                                    
-            ],
-            "jewelry": 
-            [
-                {
-                "itemCatID":"ring",
-                "itemCatName":"Rings"
-                },
-                {
-                "itemCatID":"amulet",
-                "itemCatName":"Amulets"
-                }                                                                 
-            ],
+    "itemCatName":"Basic Items",
+    "itemCatSubItems":
+        [
+        {
             "class": 
             [
                 {
@@ -192,22 +38,171 @@
                 "itemCatName":"Assassin"
                 }
             ],
-            "other": 
+            "tier": 
             [
                 {
-                "itemCatID":"charm",
-                "itemCatName":"Charms"
+                "itemCatID":"norm",
+                "itemCatName":"Normal"
                 },
                 {
-                "itemCatID":"valor",
-                "itemCatName":"Nephalem Valors"
+                "itemCatID":"excep",
+                "itemCatName":"Exceptional"
                 },
                 {
-                "itemCatID":"jewel",
-                "itemCatName":"Jewels"
-                }                                                                  
+                "itemCatID":"elit",
+                "itemCatName":"Elite"
+                },
+                {
+                "itemCatID":"uber",
+                "itemCatName":"Uber"
+                }                  
+            ],
+            "armor": 
+            [
+                {
+                "itemCatID":"helm",
+                "itemCatName":"Helm"
+                },
+                {
+                "itemCatID":"chestArmor",
+                "itemCatName":"Armor"
+                },
+                {
+                "itemCatID":"shield",
+                "itemCatName":"Shield"
+                },
+                {
+                "itemCatID":"gloves",
+                "itemCatName":"Gloves"
+                },
+                {
+                "itemCatID":"boots",
+                "itemCatName":"Boots"
+                },
+                {
+                "itemCatID":"belt",
+                "itemCatName":"Belt"
+                }                                                                                
+            ],
+            "weapon": 
+            [
+                {
+                "itemCatID":"axe",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Axe"
+                },
+                {
+                "itemCatID":"bow",
+                "itemCatMeleeRanged":"ranged",
+                "itemCatName":"Bow"
+                },
+                {
+                "itemCatID":"xbow",
+                "itemCatMeleeRanged":"ranged",
+                "itemCatName":"Crossbow"
+                },
+                {
+                "itemCatID":"quiver",
+                "itemCatMeleeRanged":"ranged",
+                "itemCatName":"Quiver"
+                },
+                {
+                "itemCatID":"dagg",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Knife"
+                },
+                {
+                "itemCatID":"jav",
+                "itemCatMeleeRanged":"ranged",
+                "itemCatName":"Javelin"
+                },
+                {
+                "itemCatID":"mace",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Mace"
+                },
+                {
+                "itemCatID":"club",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Club"
+                },                
+                {
+                "itemCatID":"hammer",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Hammer"
+                },                
+                {
+                "itemCatID":"parm",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Polearm"
+                },
+                {
+                "itemCatID":"scep",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Scepter"
+                },
+                {
+                "itemCatID":"spea",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Spear"
+                },
+                {
+                "itemCatID":"staff",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Staff"
+                },
+                {
+                "itemCatID":"swrd",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Sword"
+                },
+                {
+                "itemCatID":"throw",
+                "itemCatMeleeRanged":"ranged",
+                "itemCatName":"Thrown Weapon"
+                },
+                {
+                "itemCatID":"wand",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Wand"
+                },
+                {
+                "itemCatID":"h2h",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Hand to Hand"
+                }
+            ],
+            "circlets": 
+            [
+                {
+                "itemCatID":"circlet",
+                "itemCatName":"Circlet"
+                },
+                {
+                "itemCatID":"coronet",
+                "itemCatName":"Coronet"
+                },
+                {
+                "itemCatID":"tiara",
+                "itemCatName":"Tiara"
+                },
+                {
+                "itemCatID":"diadem",
+                "itemCatName":"Diadem"
+                }                                                                    
+            ],
+            "jewelry": 
+            [
+                {
+                "itemCatID":"ring",
+                "itemCatName":"Rings"
+                },
+                {
+                "itemCatID":"amulet",
+                "itemCatName":"Amulets"
+                }                                                                 
             ]
-            }
+        }
         ]
     },
     {
@@ -302,66 +297,87 @@
             [
                 {
                 "itemCatID":"axe",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Axe"
                 },
                 {
                 "itemCatID":"bow",
+                "itemCatMeleeRanged":"ranged",
                 "itemCatName":"Bow"
                 },
                 {
                 "itemCatID":"xbow",
+                "itemCatMeleeRanged":"ranged",
                 "itemCatName":"Crossbow"
                 },
                 {
                 "itemCatID":"quiver",
+                "itemCatMeleeRanged":"ranged",
                 "itemCatName":"Quiver"
                 },
                 {
                 "itemCatID":"dagg",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Knife"
                 },
                 {
                 "itemCatID":"jav",
+                "itemCatMeleeRanged":"ranged",
                 "itemCatName":"Javelin"
                 },
                 {
                 "itemCatID":"mace",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Mace"
                 },
                 {
+                "itemCatID":"club",
+                "itemCatMeleeRanged":"melee",
+                "itemCatName":"Club"
+                },                
+                {
                 "itemCatID":"hammer",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Hammer"
                 },                
                 {
                 "itemCatID":"parm",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Polearm"
                 },
                 {
                 "itemCatID":"scep",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Scepter"
                 },
                 {
                 "itemCatID":"spea",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Spear"
                 },
                 {
                 "itemCatID":"staff",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Staff"
                 },
                 {
                 "itemCatID":"swrd",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Sword"
                 },
                 {
                 "itemCatID":"throw",
+                "itemCatMeleeRanged":"ranged",
                 "itemCatName":"Thrown Weapon"
                 },
                 {
                 "itemCatID":"wand",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Wand"
                 },
                 {
                 "itemCatID":"h2h",
+                "itemCatMeleeRanged":"melee",
                 "itemCatName":"Hand to Hand"
                 }
             ],
@@ -402,10 +418,6 @@
                 "itemCatName":"Charms"
                 },
                 {
-                "itemCatID":"valor",
-                "itemCatName":"Nephalem Valors"
-                },
-                {
                 "itemCatID":"jewel",
                 "itemCatName":"Jewels"
                 }
@@ -415,18 +427,23 @@
         ]
     },
     {
-    "itemCatID":"sets",
-    "itemCatName":"Sets",
+    "itemCatID":"nv",
+    "itemCatName":"Nephalem Valors",
     "itemCatSubItems":""
     },
     {
-    "itemCatID":"affixes",
-    "itemCatName":"Magic and Rare Prefixes and Suffixes",
+    "itemCatID":"setItems",
+    "itemCatName":"Sets",
     "itemCatSubItems":""
     },
     {
     "itemCatID":"charmComponents",
     "itemCatName":"Charm Components",
+    "itemCatSubItems":""
+    },
+    {
+    "itemCatID":"Corruptions",
+    "itemCatName":"Corruptions",
     "itemCatSubItems":""
     },
     {
@@ -440,8 +457,18 @@
     "itemCatSubItems":""
     },                 
     {
-    "itemCatID":"regents",
-    "itemCatName":"Crafting Items",
+    "itemCatID":"augments",
+    "itemCatName":"Augments",
+    "itemCatSubItems":""
+    },
+    {
+    "itemCatID":"affixes",
+    "itemCatName":"Magic and Rare Prefixes and Suffixes",
+    "itemCatSubItems":""
+    },
+    {
+    "itemCatID":"skills",
+    "itemCatName":"Skill IDS for BH",
     "itemCatSubItems":""
     }
     ]
