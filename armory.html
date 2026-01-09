@@ -1,5 +1,4 @@
-<html lang="en">
-<head>
+
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -7,9 +6,9 @@
   <title>Diablo 2 - Resurgence (unofficial 1.13 mod) - Armory</title>
   <meta name="description" content="Diablo 2 Resurgence mod - Item Armory">
   <meta name="author" content="freeb0rn">
-  <meta http-equiv='cache-control' content='no-cache'> 
-<meta http-equiv='expires' content='0'> 
-<meta http-equiv='pragma' content='no-cache'>
+  <meta http-equiv="cache-control" content="no-cache"> 
+<meta http-equiv="expires" content="0"> 
+<meta http-equiv="pragma" content="no-cache">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -17,7 +16,7 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
 
   <!-- JS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -574,7 +573,7 @@ document.addEventListener('keydown', function(event) {
         
         $("#armoryContent").empty();
 
-        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"/images/chaos-barbhireable.gif\" /></div>";
+        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"images/chaos-barbhireable.gif\" /></div>";
         $("#armoryContent").html(loading_html);
 
         var html = "";
@@ -615,7 +614,7 @@ document.addEventListener('keydown', function(event) {
                     html = html + "<hr>";
                     html = html + "<div class=\"set-item row\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
                     html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
                     html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
                     html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + setItem.code + "', event)\">" + setItem.code + "</span>";
@@ -646,7 +645,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -672,7 +671,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -712,7 +711,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   if (jsonItem.runes && jsonItem.runes.length > 0) {
                   html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Runes: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
@@ -761,7 +760,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Charm slot: "+ jsonItem.slot + "</span>";
                   html = html + "<span> Charm code: "+ jsonItem.index + "</span>";
@@ -822,7 +821,7 @@ document.addEventListener('keydown', function(event) {
 
                       // Left column (image + name)
                       html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                      html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                       html = html + "<span class=\"item-name diablo_unique\">" + jsonItem.name + "</span>";
 
                       // Assuming every item has augments
@@ -1038,28 +1037,42 @@ If (alvl > 99) then alvl=99<br />`;
                       case "armor":
                         switch (filters) { // todo: change this when filters can later be stacked
                           case "Shield":
-                            filters = "Any Shield"; // so both xbow quivers and normal quivers are grabbed
+                            return $.inArray("Any Shield", element.subCategories) !== -1;
+                            break;
                           
                           default:
-                            filters = filters;
-                          break;
+                            // Check both category and subCategories for armor items
+                            return (element.category && element.category.indexOf(filters) !== -1) || 
+                                   $.inArray(filters, element.subCategories) !== -1 ||
+                                   $.inArray(filters + "s", element.subCategories) !== -1; // Try plural version
+                            break;
                         }
                       case "weapon":
                         // special cases
+                        var weaponFilter = filters;
                         switch (filters) { // todo: change this when filters can later be stacked
                           case "Quiver":
-                            filters = "Missile"; // so both xbow quivers and normal quivers are grabbed
+                            weaponFilter = "Missile"; // so both xbow quivers and normal quivers are grabbed
+                            break;
                           
                           default:
-                            filters = filters;
-                          break;
+                            weaponFilter = filters;
+                            break;
                         }
-
-                        return $.inArray(filters, element.subCategories) !== -1;
+                        // Check subCategories for weapon match
+                        return $.inArray(weaponFilter, element.subCategories) !== -1 ||
+                               $.inArray(weaponFilter + "s", element.subCategories) !== -1 || // Try plural version
+                               (element.category && element.category.indexOf(weaponFilter) !== -1); // Check category too
                         break;
                       
                       case "jewelry":
                         return element.category == filters;
+                        break;
+
+                      case "circlet":
+                        // Check category for circlet types
+                        return (element.category && element.category.indexOf(filters) !== -1) ||
+                               $.inArray(filters, element.subCategories) !== -1;
                         break;
 
                       case "other":
@@ -1072,6 +1085,10 @@ If (alvl > 99) then alvl=99<br />`;
                             return element.category == filters;
                             break;
                         }                    
+                        break;
+
+                      case "class":
+                        return element.class == filters;
                         break;
 
                       default:
@@ -1089,7 +1106,7 @@ If (alvl > 99) then alvl=99<br />`;
                         .thenBy(function (v1, v2) { return itemTypes.indexOf(v1.itemType) - itemTypes.indexOf(v2.itemType) })
                         .thenBy(function (v1, v2) { return itemTiers.indexOf(v1.tier) - itemTiers.indexOf(v2.tier) })
                         .thenBy("ilvl")
-                        .thenBy("Name");
+                        .thenBy("name");
                 data.sort(s);
                 // var s = firstBy(function (v1) { return v1.index.substring(0, v1.index.length-4) })
                 //     .thenBy("lvlreq")
@@ -1100,7 +1117,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   
                   html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                   html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code + " ILVL>1]: %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
@@ -1245,7 +1262,7 @@ If (alvl > 99) then alvl=99<br />`;
                     
                     
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1294,7 +1311,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1320,7 +1337,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                       html = html + "<div class=\"row\" id=\"" + subItem1[0].index + "\" style=\"display: none;\">";
                       html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem1[0].imageFile + "\"></span>";
+                      html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + subItem1[0].imageFile + "\"></span>";
                       if (subItem1[0].version == "108") {
                         html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + " (1.08 relic)</span>";
                       }
@@ -1346,7 +1363,7 @@ If (alvl > 99) then alvl=99<br />`;
                         // print the left side of the item info
                         html = html + "<div class=\"row\" id=\"" + subItem2[0].index + "\" style=\"display: none;\">";
                         html = html + "<div class=\"item-left four columns\">";
-                        html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem2[0].imageFile + "\"></span>";
+                        html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + subItem2[0].imageFile + "\"></span>";
                         if (subItem2[0].version == "108") {
                           html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + " (1.08 relic)</span>";
                       }
@@ -1524,11 +1541,10 @@ If (alvl > 99) then alvl=99<br />`;
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/icon32-32.png">
+  <link rel="icon" type="image/png" href="images/icon32-32.png">
 
 </head>
 <body>
-
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
@@ -1568,25 +1584,25 @@ If (alvl > 99) then alvl=99<br />`;
     </div>       
 
 
-    <div class="row separator" ></div>
+    <div class="row separator"></div>
 
 
     <div class="row" style="text-align: center; font-size:1rem;">
         <div>
           <a id="test"></a>
           <p>
-            Diablo 2 Resurgence is an unofficial modification for Diablo 2: Lord of Destruction with absolutely no commercial elements.<br /> 
+            Diablo 2 Resurgence is an unofficial modification for Diablo 2: Lord of Destruction with absolutely no commercial elements.<br/> 
           All trademarks referenced herein are the properties of their respective owners.
           <p>
-            Battle.net®<br />
+            Battle.net®<br/>
             ©1996 - 2014 Blizzard Entertainment, Inc. All rights reserved. Battle.net and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
           </p>
           <p>
-            Diablo® II<br />
+            Diablo® II<br/>
             ©2000 Blizzard Entertainment, Inc. All rights reserved. Diablo and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
           </p>
           <p>
-            Diablo® II: Lord of Destruction®<br />
+            Diablo® II: Lord of Destruction®<br/>
             ©2001 Blizzard Entertainment, Inc. All rights reserved. Diablo, Lord of Destruction and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
           </p>
         </div>
