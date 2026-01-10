@@ -574,7 +574,7 @@ document.addEventListener('keydown', function(event) {
         
         $("#armoryContent").empty();
 
-        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"/images/chaos-barbhireable.gif\" /></div>";
+        var loading_html = "<div style=\"text-align: center;\"><h6>Loading...</h6><br /><img src=\"images/chaos-barbhireable.gif\" /></div>";
         $("#armoryContent").html(loading_html);
 
         var html = "";
@@ -615,7 +615,7 @@ document.addEventListener('keydown', function(event) {
                     html = html + "<hr>";
                     html = html + "<div class=\"set-item row\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + setItem.imageFile.replace("#", "%23") + "\"></span>";
                     html = html + "<span class=\"item-name diablo_green\">"+ setItem.name + "</span>";
                     html = html + "<span class=\"item-type\">"+ setItem.item + "</span>";
                     html = html + "<span class=\"gray\" onclick=\"copyToClipboard('" + setItem.code + "', event)\">" + setItem.code + "</span>";
@@ -646,7 +646,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -672,7 +672,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Lvl req: "+ jsonItem.rlvl + "</span>";
                   html = html + "</div>";
@@ -712,7 +712,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile.replace("#", "%23") + "\"></span>";
                   html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + "</span>";
                   if (jsonItem.runes && jsonItem.runes.length > 0) {
                   html = html + "<div style=\"text-align: center; display: block;\"><span class=\"diablo_white\" style =\"display: inline;\">Runes: </span><span class=\"diablo_unique\" style =\"display: inline;\">";
@@ -761,7 +761,7 @@ document.addEventListener('keydown', function(event) {
                 $.each(data, function (key, jsonItem) {
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   html = html + "<span class=\"item-name diablo_" + jsonItem.color + "\">"+ jsonItem.name + "</span>";
                   html = html + "<span> Charm slot: "+ jsonItem.slot + "</span>";
                   html = html + "<span> Charm code: "+ jsonItem.index + "</span>";
@@ -890,7 +890,7 @@ document.addEventListener('keydown', function(event) {
                        
                        // Single centered column for image and properties
                        html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
-                       html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + mainItem.imageFile + "\"></span>";
+                       html = html + "<span class=\"item-graphic\"><img src=\"images/items/" + mainItem.imageFile + "\"></span>";
                        html += "<br /><br />";  // Add some spacing between image and properties
                        html = printItem(html, mainItem);
                        
@@ -1140,7 +1140,7 @@ If (alvl > 99) then alvl=99<br />`;
                   html = html + "<div class=\"item row\">";
                   html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                   html = html + "<div class=\"item-left four columns\">";
-                  html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                   
                   html = html + "<span class=\"item-type\">"+ jsonItem.name + " <span class=\"gray\" onclick=\"copyToClipboard('" + jsonItem.code + "', event)\">" + jsonItem.code + "</span>";
                   html = html + "<span class=\"gray\" onclick=\"copyToClipboard('ItemDisplay[(NMAG !INF !SUP) " + jsonItem.code + " ILVL>1]: %PURPLE%%NAME% %RED%0%WHITE%%dot-0a%%border-20%%TIER-4% [L%ILVL%]', event)\">BH Line Copy</span>";
@@ -1285,7 +1285,7 @@ If (alvl > 99) then alvl=99<br />`;
                     
                     
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1334,7 +1334,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                     html = html + "<div class=\"row\" id=\"" + jsonItem.index + "\">";
                     html = html + "<div class=\"item-left four columns\">";
-                    html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + jsonItem.imageFile + "\"></span>";
+                    html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + jsonItem.imageFile + "\"></span>";
                     if (jsonItem.version == "108") {
                       html = html + "<span class=\"item-name diablo_unique\">"+ jsonItem.name + " (1.08 relic)</span>";
                     }
@@ -1360,7 +1360,7 @@ If (alvl > 99) then alvl=99<br />`;
                     // print the left side of the item info
                       html = html + "<div class=\"row\" id=\"" + subItem1[0].index + "\" style=\"display: none;\">";
                       html = html + "<div class=\"item-left four columns\">";
-                      html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem1[0].imageFile + "\"></span>";
+                      html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + subItem1[0].imageFile + "\"></span>";
                       if (subItem1[0].version == "108") {
                         html = html + "<span class=\"item-name diablo_unique\">"+ subItem1[0].name + " (1.08 relic)</span>";
                       }
@@ -1386,7 +1386,7 @@ If (alvl > 99) then alvl=99<br />`;
                         // print the left side of the item info
                         html = html + "<div class=\"row\" id=\"" + subItem2[0].index + "\" style=\"display: none;\">";
                         html = html + "<div class=\"item-left four columns\">";
-                        html = html + "<span class=\"item-graphic \"><img src=\"/images/items/" + subItem2[0].imageFile + "\"></span>";
+                        html = html + "<span class=\"item-graphic \"><img src=\"images/items/" + subItem2[0].imageFile + "\"></span>";
                         if (subItem2[0].version == "108") {
                           html = html + "<span class=\"item-name diablo_unique\">"+ subItem2[0].name + " (1.08 relic)</span>";
                       }
@@ -1566,7 +1566,7 @@ If (alvl > 99) then alvl=99<br />`;
                   
                   // Single centered column for image and properties
                   html = html + "<div class=\"twelve columns\" style=\"text-align: center;\">";
-                  html = html + "<span class=\"item-graphic\"><img src=\"/images/items/" + item.imageFile + "\"></span>";
+                  html = html + "<span class=\"item-graphic\"><img src=\"images/items/" + item.imageFile + "\"></span>";
                   html += "<br />";  // Add some spacing between image and properties
                   html = printItem(html, item);
                   
